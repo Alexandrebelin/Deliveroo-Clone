@@ -1,20 +1,13 @@
 import Menu from "./Menu";
+import Cart from "./Cart";
 
-const Content = ({ data }) => {
+const Content = ({ data, addCart, subCart, cart }) => {
   return (
     <div className="backGround">
-      {data.map((elem, index) => {
-        return (
-          elem.meals.length > 0 && (
-            <div key={index} className="container">
-              <h3>{elem.name}</h3>
-              <div className="Menu">
-                <Menu data={elem.meals} />
-              </div>
-            </div>
-          )
-        );
-      })}
+      <div className="Content--center ">
+        <Menu data={data} addCart={addCart} />
+        <Cart addCart={addCart} subCart={subCart} cart={cart} />
+      </div>
     </div>
   );
 };

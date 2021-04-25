@@ -1,24 +1,18 @@
-const Menu = ({ data }) => {
+import MenuItems from "./MenuItems";
+
+const Menu = ({ data, addCart }) => {
   return (
-    <div className="MenuItems--items">
+    <div className="Menu">
       {data.map((elem, index) => {
         return (
-          <div className="MenuItem">
-            <div key={elem.id} className="MenuItem--card ">
-              <div className="MenuItem--texts">
-                <h3>{elem.title}</h3>
-
-                {elem.description && elem.description.length > 0 && (
-                  <p>{elem.description.slice(0, 50)} ...</p>
-                )}
-
-                <span>{elem.price} €</span>
-              </div>
-              <div className="MenuItem--picture">
-                {elem.picture && <img src={elem.picture} alt={elem.title} />}
-              </div>
-            </div>
-          </div>
+          elem.meals.length > 0 && (
+            <MenuItems
+              key={index}
+              data={elem.meals}
+              name={elem.name}
+              addCart={addCart}
+            />
+          )
         );
       })}
     </div>
