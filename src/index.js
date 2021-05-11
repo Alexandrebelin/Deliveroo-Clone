@@ -3,12 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import { combineReducers, createStore } from "redux";
-
-import cart from "./reducers/cart";
-
-const store = createStore(combineReducers({ cart: cart }));
 
 ReactDOM.render(
   <React.StrictMode>

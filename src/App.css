@@ -186,6 +186,7 @@ h1 {
 }
 
 .Cart--validate {
+  cursor: pointer;
   width: 330px;
   margin: 10px;
   border-radius: 5px;
